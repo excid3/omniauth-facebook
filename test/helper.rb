@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'minitest/autorun'
-require 'mocha/setup'
+require 'mocha/minitest'
 require 'omniauth/strategies/facebook'
 
 OmniAuth.config.test_mode = true
@@ -42,6 +42,8 @@ class StrategyTestCase < TestCase
     @client_id = '123'
     @client_secret = '53cr3tz'
     @options = {}
+
+    @facebook_api_version = OmniAuth::Strategies::Facebook::DEFAULT_FACEBOOK_API_VERSION
   end
 
   def strategy
